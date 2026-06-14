@@ -1,0 +1,248 @@
+{
+  "data": {
+    "raw_rows": 120000,
+    "distinct_titles": 119243,
+    "modelled_titles": 21012,
+    "source": "Seattle Public Library \u2014 Checkouts by Title (tmmm-ytt6), 2023"
+  },
+  "clustering": {
+    "silhouette": 0.4229,
+    "davies_bouldin": 0.8249,
+    "calinski_harabasz": 9535.9,
+    "n_titles": 21012,
+    "k": 6,
+    "eval_sample": 21012
+  },
+  "k_selection": [
+    {
+      "k": 2,
+      "silhouette": 0.3921,
+      "davies_bouldin": 1.2509,
+      "calinski_harabasz": 7317.1,
+      "inertia": 73347.9
+    },
+    {
+      "k": 3,
+      "silhouette": 0.4211,
+      "davies_bouldin": 1.0208,
+      "calinski_harabasz": 7859.0,
+      "inertia": 56094.3
+    },
+    {
+      "k": 4,
+      "silhouette": 0.4143,
+      "davies_bouldin": 1.0474,
+      "calinski_harabasz": 7629.2,
+      "inertia": 46714.9
+    },
+    {
+      "k": 5,
+      "silhouette": 0.4159,
+      "davies_bouldin": 0.9382,
+      "calinski_harabasz": 8281.4,
+      "inertia": 37710.5
+    },
+    {
+      "k": 6,
+      "silhouette": 0.4227,
+      "davies_bouldin": 0.825,
+      "calinski_harabasz": 9030.7,
+      "inertia": 30747.5
+    },
+    {
+      "k": 7,
+      "silhouette": 0.374,
+      "davies_bouldin": 0.8515,
+      "calinski_harabasz": 9428.1,
+      "inertia": 26162.1
+    },
+    {
+      "k": 8,
+      "silhouette": 0.3869,
+      "davies_bouldin": 0.8309,
+      "calinski_harabasz": 9651.8,
+      "inertia": 22876.1
+    },
+    {
+      "k": 9,
+      "silhouette": 0.3898,
+      "davies_bouldin": 0.8442,
+      "calinski_harabasz": 9738.5,
+      "inertia": 20457.9
+    },
+    {
+      "k": 10,
+      "silhouette": 0.3905,
+      "davies_bouldin": 0.8617,
+      "calinski_harabasz": 9565.0,
+      "inertia": 18880.2
+    }
+  ],
+  "encoder": {
+    "name": "tfidf-lsa",
+    "dim": 256
+  },
+  "clusters": [
+    {
+      "cluster": 0,
+      "label": "Digital-first titles",
+      "size": 10634,
+      "share": 0.5061,
+      "top_features": [
+        {
+          "feature": "digital_ratio",
+          "label": "digital share",
+          "z": 0.799,
+          "direction": "high"
+        },
+        {
+          "feature": "subject_count",
+          "label": "subject breadth",
+          "z": -0.459,
+          "direction": "low"
+        },
+        {
+          "feature": "log_total_checkouts",
+          "label": "overall demand",
+          "z": -0.327,
+          "direction": "low"
+        }
+      ]
+    },
+    {
+      "cluster": 2,
+      "label": "Print-first titles",
+      "size": 4621,
+      "share": 0.2199,
+      "top_features": [
+        {
+          "feature": "digital_ratio",
+          "label": "digital share",
+          "z": -1.251,
+          "direction": "low"
+        },
+        {
+          "feature": "log_total_checkouts",
+          "label": "overall demand",
+          "z": -0.291,
+          "direction": "low"
+        },
+        {
+          "feature": "avg_monthly_checkouts",
+          "label": "monthly intensity",
+          "z": -0.198,
+          "direction": "low"
+        }
+      ]
+    },
+    {
+      "cluster": 5,
+      "label": "Broad-subject titles",
+      "size": 2959,
+      "share": 0.1408,
+      "top_features": [
+        {
+          "feature": "subject_count",
+          "label": "subject breadth",
+          "z": 2.081,
+          "direction": "high"
+        },
+        {
+          "feature": "digital_ratio",
+          "label": "digital share",
+          "z": -1.251,
+          "direction": "low"
+        },
+        {
+          "feature": "pub_age",
+          "label": "title age",
+          "z": -0.426,
+          "direction": "low"
+        }
+      ]
+    },
+    {
+      "cluster": 1,
+      "label": "High-demand staples",
+      "size": 2309,
+      "share": 0.1099,
+      "top_features": [
+        {
+          "feature": "log_total_checkouts",
+          "label": "overall demand",
+          "z": 1.964,
+          "direction": "high"
+        },
+        {
+          "feature": "avg_monthly_checkouts",
+          "label": "monthly intensity",
+          "z": 1.048,
+          "direction": "high"
+        },
+        {
+          "feature": "digital_ratio",
+          "label": "digital share",
+          "z": 0.626,
+          "direction": "high"
+        }
+      ]
+    },
+    {
+      "cluster": 4,
+      "label": "Enduring backlist",
+      "size": 378,
+      "share": 0.018,
+      "top_features": [
+        {
+          "feature": "pub_age",
+          "label": "title age",
+          "z": 4.595,
+          "direction": "high"
+        },
+        {
+          "feature": "digital_ratio",
+          "label": "digital share",
+          "z": -1.251,
+          "direction": "low"
+        },
+        {
+          "feature": "subject_count",
+          "label": "subject breadth",
+          "z": -0.544,
+          "direction": "low"
+        }
+      ]
+    },
+    {
+      "cluster": 3,
+      "label": "Intense, fast-moving titles",
+      "size": 111,
+      "share": 0.0053,
+      "top_features": [
+        {
+          "feature": "avg_monthly_checkouts",
+          "label": "monthly intensity",
+          "z": 10.378,
+          "direction": "high"
+        },
+        {
+          "feature": "log_total_checkouts",
+          "label": "overall demand",
+          "z": 5.189,
+          "direction": "high"
+        },
+        {
+          "feature": "pub_age",
+          "label": "title age",
+          "z": -0.434,
+          "direction": "low"
+        }
+      ]
+    }
+  ],
+  "web_encoder": {
+    "name": "tfidf-lsa",
+    "dim": 200,
+    "tokens": 2061
+  }
+}

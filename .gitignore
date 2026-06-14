@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# data + artifacts: keep the committed sample, ignore large pulls
+data/raw/
+artifacts/*.joblib
+artifacts/*.parquet
+artifacts/*.npy
+
+# web
+web/node_modules/
+web/.next/
+web/out/
+web/next-env.d.ts
