@@ -12,7 +12,7 @@ checkout data. Two questions, one reproducible pipeline:
    the retrieval core of a RAG system, and it powers the live web demo
    **entirely client-side** (no server, no API key).
 
-> **Live demo:** _(Vercel URL — added on deploy)_
+> **Live demo:** https://library-circulation-intelligence-o22op53dx.vercel.app
 > **Data is 100% real.** Nothing in this repo is synthetic.
 
 ---
